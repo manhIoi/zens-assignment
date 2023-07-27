@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, Text, StatusBar } from 'react-native';
+import { StyleSheet, View, Text, StatusBar, ScrollView } from 'react-native';
 import { Button } from './src/components/Button';
 import { Colors, Spacing } from './src/themes';
 import { FontSize } from './src/themes/fontSize';
@@ -29,7 +29,9 @@ const App = () => {
         return (
             <View style={styles.body}>
                 <View style={styles.jokeContainer}>
-                    <Text style={styles.jokeContent}>{content}</Text>
+                    <ScrollView showsVerticalScrollIndicator={false}>
+                        <Text style={styles.jokeContent}>{content}</Text>
+                    </ScrollView>
                 </View>
                 {isShow ? (
                     <View style={styles.buttons}>
@@ -52,9 +54,13 @@ const App = () => {
         return (
             <View style={styles.footer}>
                 <Text style={styles.footerContent}>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis cum, quo
-                    totam perferendis quae dolores aliquam quia placeat aperiam quidem laborum
-                    maiores possimus fuga laudantium, numquam maxime veritatis debitis ipsum.
+                    This app is created as part of HIsolutions program. The materials contained on
+                    this website are provided for informational purposes only and are not intended
+                    to be a substitute for professional medical advice, diagnosis, or treatment. for
+                    general information only and do not constitute any form of advice. HLS assumes
+                    no resonsibility for the accuracy of any particular statement and accepts no
+                    liability for any loss or damage which may arise from reliance on the
+                    information contained on this site
                 </Text>
                 <Text style={styles.footerCopyright}>Copyright 2021 HLS</Text>
             </View>
@@ -111,14 +117,14 @@ const styles = StyleSheet.create({
         borderColor: Colors.black_07,
     },
     footerContent: {
-        fontSize: FontSize.title,
+        fontSize: FontSize.subTitle,
         color: Colors.black_11,
         textAlign: 'center',
     },
     footerCopyright: {
         fontSize: FontSize.h4,
         color: Colors.black_17,
-        marginTop: Spacing.XL,
+        marginTop: Spacing.L,
     },
 });
 
